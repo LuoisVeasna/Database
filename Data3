@@ -1,0 +1,15 @@
+
+import sqlite3
+
+conn = sqlite3.connect('univ1.db')
+
+cur = conn.cursor()
+
+rows = cur.execute('select * from Dept')
+
+print(rows.fetchall()) 
+
+
+cur.close()
+
+conn.close()
