@@ -1,0 +1,13 @@
+import sqlite3
+
+conn = sqlite3.connect('univ1.db')
+
+cur = conn.cursor()
+
+# Correct SQL command for creating the Students table
+cur.execute('CREATE TABLE Students (roll INTEGER PRIMARY KEY,name TEXT,city TEXT,deptno INTEGER,FOREIGN KEY (deptno) REFERENCES Dept (deptno))')
+
+conn.commit()
+
+cur.close()
+conn.close()
