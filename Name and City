@@ -1,0 +1,16 @@
+import sqlite3
+
+conn = sqlite3.connect('univ1.db')
+
+cur = conn.cursor()
+
+name = input("Enter name:")
+city = input("Enter city:")
+
+cur.execute("INSERT INTO Students(name, city) values (?,?)", (name, city))
+
+
+conn.commit()
+
+cur.close()
+conn.close()
